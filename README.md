@@ -5,7 +5,7 @@
 # 使い方
 
 ```
-<script type="text/javascript" src="https://cdn.rawgit.com/michimani/ColorManager/2e639452/src/color_manager.min.js"></script>
+<script src="https://rawgit.com/michimani/ColorManager/master/src/color_manager.min.js"></script>
 <script type="text/javascript">
     var c = new ColorManager();
     var gen_num = 10;
