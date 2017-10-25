@@ -6,7 +6,7 @@ var ColorManager = function(){
                 throw '{$gen_cnt} must be an integer greater than or equal to 1.';
             }
 
-            if (!base_code.match(/^#[0-9a-f]{6}/i)) {
+            if (!base_code.match(/^#[0-9a-f]{6}$/i)) {
                 throw 'The format of {$base_color} is invalid. Please specify it with 6 hexadecimal digits.';
             }
 
