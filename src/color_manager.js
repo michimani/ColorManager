@@ -1,22 +1,26 @@
 class ColorManager {
+    randColorCode(is_rgb = false) {
+        const rgb = [Math.floor(Math.random()*(255)), Math.floor(Math.random()*(255)), Math.floor(Math.random()*(255))];
+        console.log(rgb);
+        if (typeof is_rgb != 'undefined' && is_rgb == true) {
+            return rgb;
+        } else {
+            return this.rgbToHex(rgb)
+        }
+    }
+
     generateGradationColorListByHex(count, base_code) {
         const list = [];
         try {
-            if (count < 1) {
-                throw '"gen_cnt" must be an integer greater than or equal to 1.';
-            }
+            if (count < 1) throw '"gen_cnt" must be an integer greater than or equal to 1.';
 
-            if (!base_code.match(/^#[0-9a-f]{6}$/i)) {
-                throw 'The format of "base_color" is invalid. Please specify it with 6 hexadecimal digits.';
-            }
+            if (!base_code.match(/^#[0-9a-f]{6}$/i)) throw `The format of "base_color" is invalid. Please specify it with 6 hexadecimal digits. {${base_code}}`;
 
             const base_rgb = this.hexToRgb(base_code);
             const max_val = Math.max.apply(null, base_rgb);
             const min_val = Math.min.apply(null, base_rgb);
             let color_range = Math.floor(((max_val - min_val) * 6) / count);
-            if (color_range < 1) {
-                color_range = 1;
-            }
+            if (color_range < 1) color_range = 1;
 
             const max_val_idx = base_rgb.indexOf(max_val);
             const min_val_idx = base_rgb.indexOf(min_val);
