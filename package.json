@@ -1,0 +1,25 @@
+{
+  "name": "ColorManager",
+  "version": "0.2.0",
+  "description": "カラーコードに関するjavascriptのライブラリです。 段階数と開始色コードを指定すると、開始色から指定した段階数でグラーデーションとなるようなカラーコードのリストを返します。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michimani/ColorManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michimani/ColorManager/issues"
+  },
+  "homepage": "https://github.com/michimani/ColorManager#readme",
+  "devDependencies": {
+    "typescript": "^2.7.1"
+  }
+}

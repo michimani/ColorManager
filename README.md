@@ -7,13 +7,13 @@
 1. color_manager.js を読み込みます
 
     ```javascript
-    <script type="text/javascript" src="./src/color_manager.js"></script>
+    <script type="text/javascript" src="./dist/color_manager.js"></script>
     ```
 
 2. オブジェクトを生成します
 
     ```javascript
-    var cm = new ColorManager();
+    const cm = new ColorManager();
     ```
 
 3. 実行します
@@ -21,13 +21,14 @@
     1. ランダムでカラーコードを生成
 
         ```javascript
-        var rand_hex = cm.randColorCode(); // 16進数 #fe125b
-        var rand_agb = cm.randColorCode(true); // RGB [254, 18, 91]
+        let rand_hex = cm.randColor(); // 16進数 #fe125b
+        let rand_agb = cm.randColor(true); // RGB [254, 18, 91]
         ```
 
     2. グラデーションカラーコードリストを生成
 
         ```javascript
-        var grad_list = cm.generateGradationColorListByHex(10, '#ff8975');
+        let gradHexList = cm.generateGradationColorListByHex(10, '#ff8975');
+        let gradRgbList = cm.generateGradationColorListByRgb(10, [255,137,117]);
         ```
 
