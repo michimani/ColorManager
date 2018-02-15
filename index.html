@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ColorManager TEST</title>
+    <style type="text/css">
+        pre {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="./dist/color_manager.js"></script>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>
+                <h2>Generate random color.</h2>
+                <button onclick="testRandColor()">randColor()</button>
+                <button onclick="testRandColor(true)">randColor(true)</button>
+                <pre id="test1-res">
+                </pre>
+            </li>
+
+            <li>
+                <h2>Generate gradation color list. [HEX]</h2>
+                <button onclick="testGradColorHex()">generateGradationColorList(10, #ef12d7)</button>
+                <pre id="test2-res">
+                </pre>
+            </li>
+
+            <li>
+                <h2>Generate gradation color list. [RGB]</h2>
+                <button onclick="testGradColorRgb()">generateGradationColorList(10, [239,18,215])</button>
+                <pre id="test3-res">
+                </pre>
+            </li>
+        </ol>
+    </div>
+
+    <script type="text/javascript">
+        const cm = new ColorManager();
+        function testRandColor(isRgb = false) {
+            document.getElementById('test1-res').innerText = JSON.stringify(cm.randColor(isRgb), null, "\t");
+        }
+        function testGradColorHex() {
+            document.getElementById('test2-res').innerText = JSON.stringify(cm.generateGradationColorListByHex(10, '#ef12d7'), null, "\t");
+        }
+        function testGradColorRgb() {
+            document.getElementById('test3-res').innerText = JSON.stringify(cm.generateGradationColorListByRgb(10, [239,18,215]), null, "\t");
+        }
+    </script>
+</body>
+</html>
